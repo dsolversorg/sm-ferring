@@ -7,7 +7,7 @@ export const transparentHeader = true;
 export const headerHeight = '4.2rem';
 export const logo = smLogo;
 export const logoAltText = 'Digital Solvers Logo';
-export const logoLink = '/';
+export const logoLink = '/sm-ferring';
 
 // background image is positioned in a way that is best for pictures of the persona's face.
 // adjust spacing as necessary in Landing.js for different images
@@ -19,4 +19,4 @@ export const landingBackgroundImage = placeholder;
 // if set to true, on disconnect, the app will redirect to the specified route.
 // if false, it will redirect to /
 export const disconnectPage = true;
-export const disconnectRoute = '/feedback';
+export const disconnectRoute = '/sm-ferring';
