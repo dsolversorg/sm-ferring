@@ -9,12 +9,10 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "start": "npm run build && npx serve -s build",
-    "dev": "react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "deploy:gcp": "npm run build && gcloud app deploy --project ui-test-persona-nhyv app.yaml --stop-previous-version --promote --version baseline --quiet"
+    "eject": "react-scripts eject"
   },
   "dependencies": {
     "@juggle/resize-observer": "^3.3.1",
