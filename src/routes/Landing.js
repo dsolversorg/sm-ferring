@@ -104,23 +104,6 @@ function Landing({ className }) {
               <div className="col" />
             </div>
           </div>
-          <div
-            className="d-none d-lg-block"
-            style={{
-              width: '250px',
-              position: 'fixed',
-              right: '20px',
-            }}
-          >
-            <div className="d-flex align-items-center justify-content-center fs-4">
-              <CameraVideoFill size={26} />
-              <span className="ps-1">+</span>
-              <MicFill size={26} />
-            </div>
-            <div className="text-center fst-italic">
-              Habilite o seu microfone e câmera para otimizar a nossa interação
-            </div>
-          </div>
         </div>
       </div>
     </div>
