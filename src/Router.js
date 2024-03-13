@@ -46,7 +46,7 @@ function App() {
   }
 
   return (
-    <Router basename={process.env.PUBLIC_URL}>
+    <Router>
       { error && !ignoreError
         ? (
           <div className="error-modal">

@@ -7,7 +7,7 @@ export const transparentHeader = true;
 export const headerHeight = '4.2rem';
 export const logo = smLogo;
 export const logoAltText = 'Digital Solvers Logo';
-export const logoLink = '/sm-ferring';
+export const logoLink = '/';
 
 // background image is positioned in a way that is best for pictures of the persona's face.
 // adjust spacing as necessary in Landing.js for different images
