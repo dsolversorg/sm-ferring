@@ -35,4 +35,4 @@ jobs:
         env:
           AWS_S3_BUCKET: hiper-realista.digitalsolvers.com
         run: |
-          aws s3 sync dist/ s3://$AWS_S3_BUCKET
+          aws s3 sync build/ s3://$AWS_S3_BUCKET
