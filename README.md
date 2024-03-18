@@ -1,4 +1,4 @@
-# Soul Machines React Reference UI
+# Soul Machines React Reference UI Testing
 
 This template succeeds the previous [react-template](https://github.com/soulmachines/react-template). This is re-write is based on [create-react-app](https://github.com/facebook/create-react-app) and is designed mainly to provide a simple and familiar developer experience.
 
