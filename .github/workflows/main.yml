@@ -45,4 +45,4 @@ jobs:
           AWS_S3_BUCKET: hiper-realista.digitalsolvers.com
         run: |
           aws s3 sync build/ s3://$AWS_S3_BUCKET
-          aws s3 cp env s3://$AWS_S3_BUCKET/env
+          aws s3 cp .env s3://$AWS_S3_BUCKET/env
