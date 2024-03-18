@@ -17,6 +17,15 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v3
 
+      - name: Get Secrets
+        env:
+          REACT_APP_API_KEY: ${{ secrets.API_KEY_FERRING }}
+          REACT_APP_TOKEN_URL: ${{ secrets.API_KEY_FERRING }}
+        run: |
+          echo REACT_APP_API_KEY="$REACT_APP_API_KEY" >> env
+          echo REACT_APP_TOKEN_URL="$REACT_APP_TOKEN_URL" >> env
+          mv env .env
+
       - name: Setup Node 16
         uses: actions/setup-node@v3
         with:
