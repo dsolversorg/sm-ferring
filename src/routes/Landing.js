@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Color from 'color';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useHistory } from 'react-router-dom';
 import breakpoints from '../utils/breakpoints';
 import Header from '../components/Header';
 import { landingBackgroundImage, landingBackgroundColor } from '../config';
@@ -19,21 +19,7 @@ function Landing({ className }) {
     connected,
     loading,
     error,
-    requestedMediaPerms,
-    connectionState,
   } = useSelector(({ sm }) => (sm));
-
-  const {
-    percentageLoaded, name, currentStep, totalSteps,
-  } = connectionState;
-
-  const stateNameMap = {
-    SearchingForDigitalPerson: 'Searching For Digital Person',
-    DownloadingAssets: 'Downloading Assets',
-    ConnectingToDigitalPerson: 'Connecting To Digital Person',
-  };
-
-  const stateName = (name in stateNameMap) ? stateNameMap[name] : name;
 
   const createSceneIfNotStarted = () => {
     if (loading === false && connected === false && error === null) {
@@ -44,7 +30,6 @@ function Landing({ className }) {
   useEffect(() => {
     createSceneIfNotStarted();
   }, []);
-  const [page, setPage] = useState(0);
 
   const [skip, setSkip] = useState(false);
   const redirectToVideoOnConnect = () => {
