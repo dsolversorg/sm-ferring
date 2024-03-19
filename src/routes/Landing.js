@@ -1,19 +1,59 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Color from 'color';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import breakpoints from '../utils/breakpoints';
 import Header from '../components/Header';
 import { landingBackgroundImage, landingBackgroundColor } from '../config';
-import { setRequestedMediaPerms } from '../store/sm';
+import { setRequestedMediaPerms, createScene } from '../store/sm';
 import micFill from '../img/mic-fill.svg';
 import videoFill from '../img/camera-video-fill.svg';
 
 function Landing({ className }) {
   const { mic, camera } = useSelector(({ sm }) => sm.requestedMediaPerms);
   const dispatch = useDispatch();
+
+  const {
+    connected,
+    loading,
+    error,
+    requestedMediaPerms,
+    connectionState,
+  } = useSelector(({ sm }) => (sm));
+
+  const {
+    percentageLoaded, name, currentStep, totalSteps,
+  } = connectionState;
+
+  const stateNameMap = {
+    SearchingForDigitalPerson: 'Searching For Digital Person',
+    DownloadingAssets: 'Downloading Assets',
+    ConnectingToDigitalPerson: 'Connecting To Digital Person',
+  };
+
+  const stateName = (name in stateNameMap) ? stateNameMap[name] : name;
+
+  const createSceneIfNotStarted = () => {
+    if (loading === false && connected === false && error === null) {
+      dispatch(createScene());
+    }
+  };
+
+  useEffect(() => {
+    createSceneIfNotStarted();
+  }, []);
+  const [page, setPage] = useState(0);
+
+  const [skip, setSkip] = useState(false);
+  const redirectToVideoOnConnect = () => {
+    setSkip(true);
+  };
+  const history = useHistory();
+  useEffect(() => {
+    if (skip === true && connected === true) history.push('/video');
+  }, [connected, skip]);
 
   return (
     <div className={className}>
@@ -83,15 +123,14 @@ function Landing({ className }) {
                 </div>
               </div>
               <div className="row" style={{ marginBottom: '60px' }}>
-                <div>
-                  <Link
-                    to="/loading"
-                    className="shadow btn primary-accent fs-3"
-                    type="button"
-                  >
-                    Converse com a Júlia
-                  </Link>
-                </div>
+                <button
+                  className={`${connected ? 'button-start' : 'button-start button-start--disabled'} m-2`}
+                  type="button"
+                  disabled={!connected}
+                  onClick={redirectToVideoOnConnect}
+                >
+                  Converse com a Júlia
+                </button>
               </div>
               <div className="row">
                 <div>
@@ -129,6 +168,22 @@ export default styled(Landing)`
       background-position: right bottom;
     }
   }
+
+  .button-start {
+    border: 1px solid rgb(60, 60, 60);
+    border-radius: 32px;
+    padding:16px 32px;
+    background-color: #8AC43F;
+    color: #ffffff;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .button-start--disabled {
+    background-color: #E5E5E5;
+    color: #ABABAB;
+  }
+
   .landing-container {
     padding-top: 1rem;
     display: flex;
@@ -151,6 +206,8 @@ export default styled(Landing)`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: #8AC43F;
+    color: #ffffff;
 
 
     &.mic-switch::before, &.mic-switch.status-checked::after {
@@ -164,6 +221,8 @@ export default styled(Landing)`
     }
 
     &.status-unchecked {
+      background-color: #E5E5E5;
+      color: #ABABAB;
       &::after {
         content: 'OFF';
         color: #000;

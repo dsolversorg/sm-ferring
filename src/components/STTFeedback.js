@@ -34,14 +34,14 @@ function STTFeedback({ className }) {
         `}
     >
       <div className="text-wrap text-start input-display">
-        {userSpeaking ? 'Listening: ' : 'DP heard: '}
+        {userSpeaking ? 'Ouvindo: ' : 'Julia ouviu: '}
         {placeholder || lastUserUtterance}
         {
           userSpeaking
             ? (
               <div>
                 <div className="spinner-border spinner-border-sm ms-1" role="status">
-                  <span className="visually-hidden">Loading...</span>
+                  <span className="visually-hidden">Carregando...</span>
                 </div>
               </div>
             )

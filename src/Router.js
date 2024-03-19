@@ -58,15 +58,14 @@ function App() {
               </div>
               <div className="error-modal-inner">
                 <h2 className="text-center mb-4">
-                  Something has gone wrong!
+                  Algo deu errado!
                 </h2>
                 <p className="mb-4">
-                  Sorry for the interruption.
-                  Feel free to start again, or give us some feedback to help us improve!
+                  Desculpe pelo transtorno
                 </p>
                 <div className="d-flex justify-content-center mb-4">
-                  <Link to="/loading" className="btn btn-dark me-2">Reconnect</Link>
-                  <Link to="/" className="btn btn-outline-dark">Return to Main Page</Link>
+                  <Link to="/" className="btn btn-dark me-2">Reconectar</Link>
+                  <Link to="/" className="btn btn-outline-dark">Retornar para a página inicial</Link>
                 </div>
                 <div className="d-flex justify-content-center">
                   <code className="text-danger">{error.msg}</code>
