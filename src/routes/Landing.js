@@ -49,13 +49,14 @@ function Landing({ className }) {
             <div className="col-12 col-lg-6">
               <div className="row" style={{ marginBottom: '9px' }}>
                 <div>
-                  <h1 className="fw-bol">Fale com a Júlia, especialista em Colonoscopia da Ferring</h1>
+                  <h1 className="fw-bol">Sou uma Pessoa Digital Hiper-realista, criada pela Digital Solvers. Com o propósito de trazer vida para a Inteligência Artificial Generativa.</h1>
                 </div>
               </div>
               <div className="row">
                 <div>
                   <h4 className="fw-light" style={{ marginBottom: '31px' }}>
-                    Faça perguntas para a nossa especialista hiper-realista
+                    Sou especialista em Colonoscopia,
+                    faça-me uma pergunta e farei o meu melhor para respondê-la.
                   </h4>
                 </div>
               </div>
@@ -77,7 +78,7 @@ function Landing({ className }) {
                         checked={mic}
                       />
                       <div className="d-block ms-2">
-                        Use o seu microfone para que a gente possa te ouvir.
+                        Use seu microfone para que eu possa te ouvir.
                       </div>
                     </label>
                   </div>
@@ -101,7 +102,7 @@ function Landing({ className }) {
                         checked={camera}
                       />
                       <div className="d-block ms-2">
-                        Use a sua câmera para conversármos cara a cara!
+                        Deixe sua câmera ligada, pois reajo as suas expressões.
                       </div>
                     </label>
                   </div>
@@ -114,14 +115,14 @@ function Landing({ className }) {
                   disabled={!connected}
                   onClick={redirectToVideoOnConnect}
                 >
-                  Converse com a Júlia
+                  Converse comigo
                 </button>
               </div>
               <div className="row">
                 <div>
-                  Leia os termos e condições da nossa empresa em
-                  {' '}
-                  <a href="https://digitalsolvers.com/">www.digitalsolvers.com</a>
+                  Acho difícil ouvi-lo quando você está em uma sala barulhenta,
+                  ou quando há outras conversas acontecendo ao seu redor,
+                  então fale comigo de um lugar tranquilo.
                 </div>
               </div>
               <div className="col" />
