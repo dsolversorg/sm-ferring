@@ -45,4 +45,5 @@ jobs:
           AWS_S3_BUCKET: pessoadigital.digitalsolvers.com
           CUSTOMER: ferring
         run: |
+          cp build/index.html build/$CUSTOMER
           aws s3 sync build/ s3://$AWS_S3_BUCKET/$CUSTOMER
