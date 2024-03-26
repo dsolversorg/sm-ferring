@@ -139,6 +139,10 @@ Landing.propTypes = {
 };
 
 export default styled(Landing)`
+  .fw-bol {
+    font-size: 32px;
+  }
+  
   .landing-wrapper {
     min-height: 100vh;
 
