@@ -55,7 +55,9 @@ function Landing({ className }) {
               <div className="row">
                 <div>
                   <h4 className="fw-light" style={{ marginBottom: '31px' }}>
-                    Sou especialista em Colonoscopia,
+                    Sou especialista em
+                    <b> Colonoscopia</b>
+                    ,
                     faça-me uma pergunta e farei o meu melhor para respondê-la.
                   </h4>
                 </div>
