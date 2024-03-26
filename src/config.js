@@ -1,5 +1,4 @@
 /* eslint-disable import/prefer-default-export */
-import smLogo from './img/digital-solvers-logo.svg';
 import placeholder from './img/placeholder-headshot.png';
 
 // header will not take up vertical height when transparent, so you need to be mindful of overlap
