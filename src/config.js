@@ -5,7 +5,7 @@ import placeholder from './img/placeholder-headshot.png';
 // header will not take up vertical height when transparent, so you need to be mindful of overlap
 export const transparentHeader = true;
 export const headerHeight = '4.2rem';
-export const logo = smLogo;
+export const logo = 'https://pessoadigital.digitalsolvers.com/assets/digital-solvers-logo.svg';
 export const logoAltText = 'Digital Solvers Logo';
 export const logoLink = '/';
 
